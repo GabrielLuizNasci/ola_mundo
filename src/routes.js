@@ -7,10 +7,12 @@ import Rodape from 'components/Rodape';
 import PaginaPadrao from 'components/PaginaPadrao';
 import Post from 'pages/Post';
 import NotFound from 'pages/NotFound';
+import ScrollTop from 'components/SubirAoTopo';
 
 function AppRoutes() {
   return (
     <BrowserRouter>
+      <ScrollTop />
       <Menu />
       <Routes>
         <Route path='/' element={<PaginaPadrao/>}>
@@ -19,7 +21,7 @@ function AppRoutes() {
           
         </Route>
         
-        <Route path='posts/:id' element={<Post />} />
+        <Route path='posts/:id/*' element={<Post />} />
         <Route path='*' element={<NotFound />} />
       </Routes>
 
